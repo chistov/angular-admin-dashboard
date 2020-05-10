@@ -1,0 +1,75 @@
+.central-row {
+  @media (min-width: 1200px) {
+    width: 934px;
+  }
+}
+
+.statistics-col {
+  &_earnings {
+    @media (min-width: 1200px) {
+      width: 589px;
+      height: 240px;
+    }
+
+    @media (min-width: 575.98px) {
+      margin-right: 20px;
+    }
+
+    background: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    &__top {
+      max-height: 137px;
+
+      .img-fluid {
+        max-width: 26px;
+      }
+    }
+
+    &__bottom {
+      max-height: 103px;
+    }
+  }
+
+  &_employees {
+    @media (min-width: 1200px) {
+      width: 345px;
+      height: 240px;
+    }
+
+    @media (max-width: 575.98px) {
+      margin-top: 22px;
+    }
+    background: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  }
+}
+
+.hl-row {
+  @media (min-width: 576px) {
+    margin-top: 64px;
+  }
+
+  .hl-col {
+    //@media (min-width: 1200px) {
+    @media (min-width: 768px) {
+      max-width: 224px;
+      max-height: 191px;
+      margin-right: 19px;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+        background-color: green;
+      }
+    }
+
+
+
+    @media (max-width: 576px) {
+      margin-top: 22px;
+    }
+  }
+}
+
