@@ -1,0 +1,8 @@
+{
+  "specialization"  : [
+    { "name" : "java"},
+    { "name" : "ruby"},
+    { "name" : "scala"},
+    { "name" : "js"}
+  ]
+}

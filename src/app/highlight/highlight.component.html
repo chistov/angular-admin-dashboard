@@ -1,6 +1,15 @@
 <div class="container">
-  <div class="card">
-    <div class="hl-top">Here is header</div>
-    <div class="card-body">Here is body</div>
+  <div class="row" *ngIf="mode.getMode() == getModes().Edit && isPublished">
+    <div class="col-12">published case</div>
+  </div>
+  <div class="row" *ngIf="mode.getMode() == getModes().Edit && !isPublished">
+    <div class="col-6">publish</div>
+    <div class="col-6">remove</div>
+  </div>
+  <div class="row">
+    <div class="col-12"></div>
+  </div>
+  <div class="row">
+    <div class="col-12">footer</div>
   </div>
 </div>

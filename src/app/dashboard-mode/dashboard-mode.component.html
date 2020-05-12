@@ -1,32 +1,36 @@
 <div class="container">
-  <div class="row central-row">
-    <div class="col-xs-12 col-sm-8 statistics-col">
-      <div class="container statistics-col_earnings">
-        <div class="row">
-          <div class="col-4 d-none d-sm-block">
-            <div>EARNINGS</div>
-            <div>$ 2289.32</div>
+  <div *ngIf="mode.getMode() == getModes().View" class="row no-gutters statistics">
+    <div class="col-xs-12 col-sm-8 statistics-col statistics-col_earnings">
+      <div class="row">
+        <div class="col-4">
+          <div class="hdr">EARNINGS</div>
+          <div class="sum"><i class="fa fa-dollar"></i>2289.32</div>
+          <div class="last-year">
+            <span class="percent">+12% </span><span class="comment">since last year</span>
           </div>
-          <div class="col-8">
-            <img class="img-fluid" src="assets/img/deals_graphic.png" alt="">
+        </div>
+        <div class="col-8">
+          <div class="image-background">
+            <img class="base" src="assets/img/graph_v-line.png" alt="">
+            <img class="cover" src="assets/img/deals_graphic.png" alt="">
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="container statistics-col_employees">
-        <div class="card statistics-col_employees__top">
-            <div>
+    <div class="col-xs-12 col-sm-4 statistics-col_employees">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col-6">
               <div>EMPLOYEES</div>
               <div>
-                <img src="assets/img/emp.png" class="img-fluid" alt="">
+                <img src="assets/img/emp.png" alt="">
                 <span>62</span>
                 <div>You're in top 24%</div>
               </div>
             </div>
-
-            <div>
+            <div class="col-6">
               <div>PROJECTS</div>
               <div>
                 <img src="assets/img/proj.png" class="img-fluid" alt="">
@@ -34,29 +38,57 @@
                 <div>3 in this month</div>
               </div>
             </div>
+          </div>
         </div>
-        <div class="row statistics-col_employees__bottom"></div>
+        <hr>
+        <div class="col-12">
+          <div class="bottom-hdr">TOP SPECIALIZATION</div>
+          <span *ngFor="let item of specialization" class="badge badge-primary">{{item.name}}</span>
+        </div>
+      </div>
+
+      <div class="row statistics-col_employees__bottom"></div>
+    </div>
+  </div>
+
+  <div class="row no-gutters hl-row">
+    <div class="col-12">
+      <h3>Highlights</h3>
+    </div>
+    <div class="col-xs-12 col-sm-3 hl-col" *ngFor="let item of publications">
+      <app-highlight></app-highlight>
+    </div>
+    <div class="col-xs-12 col-sm-3 hl-col" *ngIf="mode.getMode() == getModes().Edit">
+      <div class="row">
+        <div class="col-12 add-new-top">
+          <i class="fa fa-plus-circle"></i>
+        </div>
+        <div class="col-12 add-new-bottom">remove</div>
       </div>
     </div>
   </div>
-  <div class="row hl-row central-row">
-    <div class="col-xs-12 col-sm-3 hl-col">
-      <app-highlight></app-highlight>
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div #alertTag class="d-none show d-sm-block alert alert-warning alert-dismissible fade" role="alert">
+        <div class="row no-gutters">
+          <div class="col-1 align-self-center">
+            <i class="fa fa-2x fa-bell"></i>
+          </div>
+          <div class="col-11">
+            <div class="alert-text-wrap">
+              <strong class="alert-warning-msg">Don’t forget to publish weekly notes about manager’s work!</strong>
+              <p class="alert-notice-msg">Notification will be closed after 8 seconds</p>
+              <button (click)="rmAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <h3>Project statuses</h3>
+      </div>
+      <app-status-table></app-status-table>
     </div>
-    <div class="col-xs-12 col-sm-3 hl-col">
-      <app-highlight></app-highlight>
-    </div>
-    <div class="col-xs-12 col-sm-3 hl-col">
-      <app-highlight></app-highlight>
-    </div>
-    <div class="col-xs-12 col-sm-3 hl-col">
-      <app-highlight></app-highlight>
-    </div>
-    <div class="col-xs-12 col-sm-3 hl-col">
-      <app-highlight></app-highlight>
-    </div>
-  </div>
-  <div class="row central-row">
-    <div class="col-12"></div>
   </div>
 </div>

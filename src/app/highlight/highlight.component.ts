@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModeService} from '../mode.service';
+import { OpenMode} from '../models/types';
 
 @Component({
   selector: 'app-highlight',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HighlightComponent implements OnInit {
 
-  constructor() {
-    console.log('hl')
+  isPublished = false;
+
+  constructor(public mode: ModeService) {
   }
+
+  getModes() { return OpenMode; }
 
   ngOnInit(): void {
   }

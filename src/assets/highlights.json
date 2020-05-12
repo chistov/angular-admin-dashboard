@@ -1,0 +1,37 @@
+{
+  "publications" :
+  [
+    {
+      "text" : "main area text",
+      "imgSrc": null,
+      "author" : {
+        "position": "company position",
+        "name" : "Author's Name"
+      }
+    },
+    {
+      "text" : "main area text",
+      "imgSrc": null,
+      "author" : {
+        "position": "company position",
+        "name" : "Author's Name"
+      }
+    },
+    {
+      "text" : "main area text",
+      "imgSrc": null,
+      "author" : {
+        "position": "company position",
+        "name" : "Author's Name"
+      }
+    },
+    {
+      "text" : "main area text",
+      "imgSrc": null,
+      "author" : {
+        "position": "company position",
+        "name" : "Author's Name"
+      }
+    }
+  ]
+}

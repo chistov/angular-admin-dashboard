@@ -1,1 +1,30 @@
-<p>status-table works!</p>
+<table class="table table-borderless">
+  <thead>
+  <tr>
+    <th>PROJECT</th>
+    <th class="d-none d-sm-block">COMPANY</th>
+    <th>STATUS</th>
+    <th>RELEASE DATE</th>
+    <th *ngIf="mode.getMode() == getModes().View"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of statTable">
+    <th>{{item.project}}</th>
+    <td class="d-none d-sm-block">{{item.company}}</td>
+    <td>
+      <div class="row">
+        <div class="col-3">{{item.status}}%</div>
+        <div class="col-9 d-none d-sm-block">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{item.status}}%" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+      </div>
+    </td>
+    <td>{{item.relDate}}</td>
+    <td class="d-none d-sm-block" *ngIf="mode.getMode() == getModes().View"><a (click)="rmRow($event, item)" href="#">&times;</a></td>
+  </tr>
+  </tbody>
+</table>
