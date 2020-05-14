@@ -1,15 +1,18 @@
-<nav class="navbar">
-  <div class="container">
-    <div class="row no-gutters">
-      <div class="col-sm-6 navbar-col_left">
-        <ul class="d-none d-sm-flex"><li><a href="#" (click)="setMode($event, getModes().View)">Dashboard mode</a></li></ul>
-        <div class="text-center d-block d-sm-none">Dashboard mode only</div>
-      </div>
-      <div class="col-sm-6 navbar-col_right text-right d-none d-sm-block">
-        <ul><li class="menu-hdr_right"><a href="#" (click)="setMode($event, getModes().Edit)">Edit mode</a></li></ul>
+<div class="nav-wrap">
+  <nav class="navbar">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-sm-6 navbar-col_left">
+          <ul class="d-none d-sm-flex"><li><a href="#" (click)="setMode($event, getModes().View)">Dashboard mode</a></li></ul>
+          <div class="text-center d-block d-sm-none">Dashboard mode only</div>
+        </div>
+        <div class="col-sm-6 navbar-col_right text-right d-none d-sm-block">
+          <ul><li class="menu-hdr_right"><a href="#" (click)="setMode($event, getModes().Edit)">Edit mode</a></li></ul>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+  <div class="bottom-lane"></div>
+</div>
 
-<router-outlet></router-outlet>
+<app-dashboard-mode></app-dashboard-mode>

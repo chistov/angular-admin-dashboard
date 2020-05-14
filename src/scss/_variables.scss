@@ -1,1 +1,25 @@
 $fa-font-path: '../node_modules/font-awesome/fonts';
+
+@mixin highlight-template {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  transition: transform 0.8s;
+
+
+  &:hover {
+    transform: translateY(-10px);
+    @media (max-width: 575.98px) {
+      transform: translateY(0px);
+    }
+  }
+  @media (min-width: 576px) {
+    min-width: 224px;
+    min-height: 191px;
+    width: 100%;
+  }
+
+  @media (max-width: 576px) {
+    height: 160px;
+  }
+}

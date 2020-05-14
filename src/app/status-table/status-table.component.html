@@ -24,7 +24,7 @@
       </div>
     </td>
     <td>{{item.relDate}}</td>
-    <td class="d-none d-sm-block" *ngIf="mode.getMode() == getModes().View"><a (click)="rmRow($event, item)" href="#">&times;</a></td>
+    <td class="d-none d-sm-block" *ngIf="mode.getMode() == getModes().Edit"><a (click)="rmRow($event, item)" href="#">&times;</a></td>
   </tr>
   </tbody>
 </table>

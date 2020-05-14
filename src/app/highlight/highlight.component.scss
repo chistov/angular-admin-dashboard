@@ -1,18 +1,5 @@
+@import "src/scss/_variables.scss";
+
 .container {
-  background: #FFFFFF;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-  width: 224px;
-  height: 191px;
-  transition: transform 0.8s;
-
-  &:hover {
-    transform: translateY(-10px);
-  }
-
-  //@media (min-width: 1200px) {
-  //  width: 224px;
-  //  height: 191px;
-  //}
-
+  @include highlight-template
 }

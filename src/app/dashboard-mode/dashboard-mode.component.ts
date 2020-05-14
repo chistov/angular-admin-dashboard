@@ -29,4 +29,12 @@ export class DashboardModeComponent implements OnInit {
   rmAlert() {
     this.elRefContent.nativeElement.remove();
   }
+
+  stub($event) {
+    $event.preventDefault();
+  }
+
+  addNew() {
+    this.publications.push({});
+  }
 }

@@ -1,25 +1,32 @@
 <div class="container">
-  <div *ngIf="mode.getMode() == getModes().View" class="row no-gutters statistics">
-    <div class="col-xs-12 col-sm-8 statistics-col statistics-col_earnings">
-      <div class="row">
-        <div class="col-4">
+  <div class="row no-gutters statistics grid-sizes">
+    <div class="col-xs-12 col-sm-8 statistics-col statistics-col_earnings" *ngIf="mode.getMode() == getModes().View">
+      <div class="row top">
+        <div class="col-xs-12 col-sm-4">
           <div class="hdr">EARNINGS</div>
           <div class="sum"><i class="fa fa-dollar"></i>2289.32</div>
           <div class="last-year">
             <span class="percent">+12% </span><span class="comment">since last year</span>
           </div>
         </div>
-        <div class="col-8">
+        <div class="col-xs-12 col-sm-8">
           <div class="image-background">
             <img class="base" src="assets/img/graph_v-line.png" alt="">
             <img class="cover" src="assets/img/deals_graphic.png" alt="">
           </div>
         </div>
       </div>
+      <div class="row bottom align-items-end">
+        <div class="col-12">
+          <div class="stat-link">
+            <a (click)="stub($event)" href="#">ALL STATISTICS &rarr;</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="col-xs-12 col-sm-4 statistics-col_employees">
-      <div class="row">
+      <div class="row" *ngIf="mode.getMode() == getModes().View">
         <div class="col">
           <div class="row">
             <div class="col-6">
@@ -51,23 +58,28 @@
     </div>
   </div>
 
-  <div class="row no-gutters hl-row">
-    <div class="col-12">
+  <div class="row no-gutters justify-content-start hl-row grid-sizes" [class.extra-margin]="mode.getMode() == getModes().Edit">
+    <div class="col-12 hl-hdr">
       <h3>Highlights</h3>
     </div>
     <div class="col-xs-12 col-sm-3 hl-col" *ngFor="let item of publications">
       <app-highlight></app-highlight>
     </div>
-    <div class="col-xs-12 col-sm-3 hl-col" *ngIf="mode.getMode() == getModes().Edit">
-      <div class="row">
-        <div class="col-12 add-new-top">
-          <i class="fa fa-plus-circle"></i>
+    <div class="col-xs-12 col-sm-3 hl-col add-new" *ngIf="mode.getMode() == getModes().Edit">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 add-new-top">
+            <i class="fa fa-plus-circle"></i>
+            <div>New post</div>
+          </div>
+          <div class="col-12">
+            <button (click)="addNew()" type="button" class="btn btn-primary">Add new</button>
+          </div>
         </div>
-        <div class="col-12 add-new-bottom">remove</div>
       </div>
     </div>
   </div>
-  <div class="row no-gutters">
+  <div class="row no-gutters grid-sizes table-row">
     <div class="col-12">
       <div #alertTag class="d-none show d-sm-block alert alert-warning alert-dismissible fade" role="alert">
         <div class="row no-gutters">
@@ -85,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-12 table-hdr">
         <h3>Project statuses</h3>
       </div>
       <app-status-table></app-status-table>
