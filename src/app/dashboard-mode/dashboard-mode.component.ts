@@ -1,8 +1,6 @@
-import { ElementRef, ViewChild, Component, OnInit } from '@angular/core';
-import { ModeService} from '../mode.service';
-import { OpenMode} from '../models/types';
-import {specialization} from 'assets/specialization.json';
-import {publications} from 'assets/highlights.json';
+import { Component, OnInit } from '@angular/core';
+import {Content} from '../models/content';
+import {EmitterService} from '../common/emitter.service';
 
 @Component({
   selector: 'app-dashboard-mode',
@@ -11,30 +9,13 @@ import {publications} from 'assets/highlights.json';
 })
 
 export class DashboardModeComponent implements OnInit {
-  @ViewChild('alertTag', {read: ElementRef, static: false}) elRefContent: ElementRef;
-  specialization = [];
-  publications = [];
+  currComponent: Content[];
 
-  constructor(public mode: ModeService) {
-    this.specialization = specialization;
-    this.publications = publications;
-    setTimeout( () => this.elRefContent.nativeElement.remove(), 8000);
+  constructor(emitter: EmitterService) {
+    console.log('DashboardModeComponent works');
+    this.currComponent = emitter.getComponents();
   }
 
   ngOnInit(): void {
-  }
-
-  getModes() { return OpenMode; }
-
-  rmAlert() {
-    this.elRefContent.nativeElement.remove();
-  }
-
-  stub($event) {
-    $event.preventDefault();
-  }
-
-  addNew() {
-    this.publications.push({});
   }
 }
