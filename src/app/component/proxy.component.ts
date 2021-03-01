@@ -26,7 +26,7 @@ export class ProxyComponent implements OnInit {
 
   init() {
     let isOk = false;
-    interval(10000)
+    interval(3000)
       .subscribe(() => this.loadComponent(isOk = !isOk));
   }
 

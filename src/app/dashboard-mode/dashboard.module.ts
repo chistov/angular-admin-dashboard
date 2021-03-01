@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule} from './dashboard-routing.module';
+import { CommonLayoutComponent } from '../common-components/common-layout/common-layout.component';
+import { HeaderComponent } from '../common-components/header/header.component';
+import { AsideComponent } from '../common-components/aside/aside.component';
 
 
 import { ProxyComponent } from '../component/proxy.component';
@@ -19,7 +22,10 @@ import { EmitterService } from '../dynamic-component-utils/emitter.service';
   declarations: [
     DashboardModeComponent,
     ProxyComponent,
-    ContainerDirective
+    ContainerDirective,
+    CommonLayoutComponent,
+    HeaderComponent,
+    AsideComponent
   ],
   providers: [EmitterService],
 })
