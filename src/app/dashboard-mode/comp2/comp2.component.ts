@@ -3,7 +3,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 @Component({
   selector: 'app-comp2',
   templateUrl: './comp2.component.html',
-  styleUrls: ['./comp2.component.css']
+  styleUrls: ['./comp2.component.scss']
 })
 export class Comp2Component implements OnInit, OnDestroy {
 

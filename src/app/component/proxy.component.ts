@@ -1,7 +1,7 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
 import {Content} from '../models/content';
-import {ContainerDirective} from '../common/container.directive';
-import {DummyComponent} from '../common/dummy.component';
+import {ContainerDirective} from '../dynamic-component-utils/container.directive';
+import {DummyComponent} from '../dynamic-component-utils/dummy.component';
 import {interval} from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ import {interval} from 'rxjs';
                 <ng-template container></ng-template>
               </div>
             `,
-  styleUrls: ['./proxy.component.css']
+  styleUrls: ['./proxy.component.scss']
 })
 export class ProxyComponent implements OnInit {
   @Input() currComponent: Content[];

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Content} from '../models/content';
-import {EmitterService} from '../common/emitter.service';
+import {EmitterService} from '../dynamic-component-utils/emitter.service';
 
 @Component({
   selector: 'app-dashboard-mode',

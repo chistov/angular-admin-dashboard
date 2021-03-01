@@ -5,11 +5,11 @@ import { DashboardRoutingModule} from './dashboard-routing.module';
 
 import { ProxyComponent } from '../component/proxy.component';
 import { DashboardModeComponent } from './dashboard-mode.component';
-import { ContainerDirective } from '../common/container.directive';
+import { ContainerDirective } from '../dynamic-component-utils/container.directive';
 
 
 
-import { EmitterService } from '../common/emitter.service';
+import { EmitterService } from '../dynamic-component-utils/emitter.service';
 
 @NgModule({
   imports: [
