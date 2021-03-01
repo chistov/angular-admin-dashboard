@@ -1,21 +1,15 @@
 import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
 import {Content} from '../models/content';
-import {ContainerDirective} from '../dynamic-component-utils/container.directive';
-import {DummyComponent} from '../dynamic-component-utils/dummy.component';
-import {interval} from 'rxjs';
+import {ContainerDirective} from './container.directive';
+import {DummyComponent} from './dummy.component';
+// import {interval} from 'rxjs';
 
 @Component({
-  selector: 'app-proxy',
-  template: `
-              <div class="ad-banner-example">
-                <h3>Proxy</h3>
-                <ng-template container></ng-template>
-              </div>
-            `,
-  styleUrls: ['./proxy.component.scss']
+  selector: 'app-loader',
+  template: '<ng-template container></ng-template>'
 })
-export class ProxyComponent implements OnInit {
-  @Input() currComponent: Content[];
+export class LoaderComponent implements OnInit {
+  @Input() currComponents: Content[];
   @ViewChild(ContainerDirective, {static: true}) container: ContainerDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
@@ -26,17 +20,17 @@ export class ProxyComponent implements OnInit {
 
   init() {
     let isOk = false;
-    interval(3000)
-      .subscribe(() => this.loadComponent(isOk = !isOk));
+    // interval(3000)
+    //   .subscribe(() => this.loadComponent(isOk = !isOk));
   }
 
   loadComponent(isOk: boolean) {
     let curr: Content;
     if (isOk) {
-      curr = this.currComponent[0];
+      curr = this.currComponents[0];
     }
     else {
-      curr = this.currComponent[1];
+      curr = this.currComponents[1];
     }
 
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(curr.component);

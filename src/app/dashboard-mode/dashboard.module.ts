@@ -6,7 +6,7 @@ import { HeaderComponent } from '../common-components/header/header.component';
 import { AsideComponent } from '../common-components/aside/aside.component';
 
 
-import { ProxyComponent } from '../component/proxy.component';
+import { LoaderComponent } from '../dynamic-component-utils/loader.component';
 import { DashboardModeComponent } from './dashboard-mode.component';
 import { ContainerDirective } from '../dynamic-component-utils/container.directive';
 
@@ -21,7 +21,7 @@ import { EmitterService } from '../dynamic-component-utils/emitter.service';
   ],
   declarations: [
     DashboardModeComponent,
-    ProxyComponent,
+    LoaderComponent,
     ContainerDirective,
     CommonLayoutComponent,
     HeaderComponent,

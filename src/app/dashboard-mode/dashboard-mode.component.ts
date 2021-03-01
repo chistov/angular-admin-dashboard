@@ -9,11 +9,11 @@ import {EmitterService} from '../dynamic-component-utils/emitter.service';
 })
 
 export class DashboardModeComponent implements OnInit {
-  currComponent: Content[];
+  currComponents: Content[];
 
   constructor(emitter: EmitterService) {
     console.log('DashboardModeComponent works');
-    this.currComponent = emitter.getComponents();
+    this.currComponents = emitter.getComponents();
   }
 
   ngOnInit(): void {
